@@ -19,7 +19,7 @@ class SocialCard extends StatelessWidget{
                       topLeft: Radius.circular(16.0),
                       topRight: Radius.circular(16.0))),
               child: Container(
-                margin: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: children,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_learning/src/screens/main_screen.dart';
 import 'package:ui_learning/src/widgets/pass_input.dart';
 import 'package:ui_learning/src/widgets/social_card.dart';
 import '../layout/colors.dart';
@@ -16,13 +17,16 @@ class LoginScreen extends StatelessWidget {
         decoration: backgroundGradient,
         child: Column(
           children: [
+            
             Expanded(child: Container()),
             
             const Image(
               image: AssetImage('assets/cisco.png'),
               width: 240.0,
-              height: 240.0,
+              height: 180.0,
             ),
+
+            SizedBox(height: 16),
 
             Container(
               margin: const EdgeInsets.all(32.0),
@@ -31,19 +35,24 @@ class LoginScreen extends StatelessWidget {
             
                   TextInput(hint: "Correo electrónico"),
                   const SizedBox(
-                    height: 16.0,
+                    height: 8.0,
                   ),
             
                   PasswordInput(hint: 'Password'),
                   const SizedBox(
-                    height: 32.0,
+                    height: 16.0,
                   ),
 
-                  const MainButton(text: "INICIAR SESIÓN"),
+                  MainButton(text: "INICIAR SESIÓN", onClick: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainScreen()),
+                    );
+                  }),
                 ],
               ),
             ),
-            const SizedBox(height: 24.0),
+            Expanded(child: Container()),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -56,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                         style: whiteBoldTextStyle))
               ],
             ),
-            Expanded(child: Container()),
+            
 
             Row(
               children: [

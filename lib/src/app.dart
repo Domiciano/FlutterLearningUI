@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'layout/themes.dart';
 import 'screens/login_screen.dart';
 
 class App extends StatelessWidget {
@@ -10,7 +11,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: appBarTheme,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 26, 89, 173)),
         useMaterial3: true,
       ),
       home: const LoginScreen(),

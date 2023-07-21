@@ -28,8 +28,8 @@ class TextInput extends StatelessWidget {
                 decoration: InputDecoration(
                     contentPadding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)),
+                    border: const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
                     hintText: hint,
                     hintStyle: greyTextStyle)))
       ],

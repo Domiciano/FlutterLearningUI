@@ -31,8 +31,9 @@ class PasswordInput extends StatelessWidget {
               hintStyle: greyTextStyle,
               border: const OutlineInputBorder(
                 borderSide:
-                    BorderSide(color: Colors.white), // Color del borde blanco
+                    BorderSide(color: Colors.white)
               ),
+              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 8, vertical: 0)),
         )),

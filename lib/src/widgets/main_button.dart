@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import '../layout/colors.dart';
 
 class MainButton extends StatelessWidget {
-  const MainButton({super.key, required this.text});
+  const MainButton({super.key, required this.text, required this.onClick});
 
   final String text;
+  final Function() onClick;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: (){
-          print("Click");
-        },
+        onTap: onClick,
         child: Container(
           decoration: BoxDecoration(
             gradient: mainButtonGradient,
