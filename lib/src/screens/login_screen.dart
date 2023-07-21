@@ -61,11 +61,11 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 const SizedBox(width: 32),
-                Expanded(child: Container(height: 2, decoration: BoxDecoration(color: Colors.white))),
+                Expanded(child: Container(height: 2, decoration: const BoxDecoration(color: Colors.white))),
                 const SizedBox(width: 8),
                 const Text("Redes sociales", style: whiteBoldTextStyle),
                 const SizedBox(width: 8),
-                Expanded(child: Container(height: 2, decoration: BoxDecoration(color: Colors.white))),
+                Expanded(child: Container(height: 2, decoration: const BoxDecoration(color: Colors.white))),
                 const SizedBox(width: 32)
               ],
             ),
