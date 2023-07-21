@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class SocialCard extends StatelessWidget{
   
-  
 
-  SocialCard({super.key, required this.children});
+  const SocialCard({super.key, required this.children});
 
-  List<Widget> children;
+  final List<Widget> children;
   
   
   @override

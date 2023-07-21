@@ -3,10 +3,10 @@ import 'package:ui_learning/src/layout/colors.dart';
 
 class CircleButton extends StatelessWidget {
   
-  CircleButton({super.key, required this.title, required this.asset});
+  const CircleButton({super.key, required this.title, required this.asset});
 
-  String title;
-  String asset;
+  final String title;
+  final String asset;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class CircleButton extends StatelessWidget {
                   width: 48.0,
                   height: 48.0,
                 )),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(title, style: whiteTextStyle),
           ],
         ));

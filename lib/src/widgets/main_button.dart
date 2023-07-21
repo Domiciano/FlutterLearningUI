@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_learning/src/widgets/social_card.dart';
 import '../layout/colors.dart';
-import '../widgets/circle_button.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({super.key, required this.text});

@@ -17,28 +17,33 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(child: Container()),
+            
             const Image(
               image: AssetImage('assets/cisco.png'),
               width: 240.0,
               height: 240.0,
             ),
+
             Container(
               margin: const EdgeInsets.all(32.0),
               child: Column(
                 children: [
+            
                   TextInput(hint: "Correo electrónico"),
-                  SizedBox(
+                  const SizedBox(
                     height: 16.0,
                   ),
+            
                   PasswordInput(hint: 'Password'),
                   const SizedBox(
                     height: 32.0,
                   ),
+
                   const MainButton(text: "INICIAR SESIÓN"),
                 ],
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -55,25 +60,27 @@ class LoginScreen extends StatelessWidget {
 
             Row(
               children: [
-                SizedBox(width: 32),
+                const SizedBox(width: 32),
                 Expanded(child: Container(height: 2, decoration: BoxDecoration(color: Colors.white))),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 const Text("Redes sociales", style: whiteBoldTextStyle),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Expanded(child: Container(height: 2, decoration: BoxDecoration(color: Colors.white))),
-                SizedBox(width: 32)
+                const SizedBox(width: 32)
               ],
             ),
-
             
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
+
             const Text(
               "También puede iniciar sesión con una cuenta de Google, Facebook o Email",
               textAlign: TextAlign.center,
               style: whiteTextStyle,
             ),
-            SizedBox(height: 16),
-            SocialCard(children: [
+            
+            const SizedBox(height: 16),
+
+            const SocialCard(children: [
               CircleButton(
                 title: "GOOGLE",
                 asset: 'google.png',

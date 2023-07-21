@@ -14,14 +14,14 @@ class TextInput extends StatelessWidget {
         Container(
           width: 48,
           height: 48,
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.white, width: 1.0), // Borde negro de 2.0 de ancho
+            border: Border.all(color: Colors.white, width: 1.0),
           ),
-          child: Image.asset('assets/usericon.png', width: 8, height: 8,), // Ruta de la imagen
+          child: Image.asset('assets/usericon.png', width: 8, height: 8,),
         ),
-        SizedBox(width: 8,),
+        const SizedBox(width: 8),
         Expanded(
             child: TextField(
                 style: whiteTextStyle,
