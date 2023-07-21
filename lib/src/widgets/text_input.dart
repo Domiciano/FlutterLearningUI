@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import '../layout/colors.dart';
 
 class TextInput extends StatelessWidget {
-  TextInput({super.key, required this.hint});
+
+  TextInput({super.key, required this.hint, required this.onChanged});
+
+  
 
   final String hint;
+  final Function(String value) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +28,7 @@ class TextInput extends StatelessWidget {
         const SizedBox(width: 8),
         Expanded(
             child: TextField(
+                onChanged: onChanged,
                 style: whiteTextStyle,
                 decoration: InputDecoration(
                     contentPadding:

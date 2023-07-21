@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_learning/src/blocs/auth_bloc.dart';
 import 'package:ui_learning/src/screens/main_screen.dart';
 import 'package:ui_learning/src/widgets/pass_input.dart';
 import 'package:ui_learning/src/widgets/social_card.dart';
@@ -8,7 +9,13 @@ import '../widgets/main_button.dart';
 import '../widgets/text_input.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+
+
+  final AuthBloc _authBloc = AuthBloc();
+
+  
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +33,33 @@ class LoginScreen extends StatelessWidget {
               height: 180.0,
             ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             Container(
               margin: const EdgeInsets.all(32.0),
               child: Column(
                 children: [
             
-                  TextInput(hint: "Correo electrónico"),
+                  TextInput(
+                    hint: "Correo electrónico",
+                    onChanged: (value){
+                      _authBloc.setUsername(value);
+                    },
+                  ),
                   const SizedBox(
                     height: 8.0,
                   ),
             
-                  PasswordInput(hint: 'Password'),
+                  PasswordInput(hint: 'Password', 
+                  onChanged: (value){
+                      _authBloc.setPassword(value);
+                    }),
                   const SizedBox(
                     height: 16.0,
                   ),
 
                   MainButton(text: "INICIAR SESIÓN", onClick: (){
+                    _authBloc.login();
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => MainScreen()),
