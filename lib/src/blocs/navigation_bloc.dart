@@ -1,8 +1,7 @@
 import 'dart:async';
 
-class NavigationBloc{
-
-  NavigationBloc(){
+class NavigationBloc {
+  NavigationBloc() {
     _indexController.add(0);
   }
 
@@ -20,5 +19,4 @@ class NavigationBloc{
   void dispose() {
     _indexController.close();
   }
-
 }

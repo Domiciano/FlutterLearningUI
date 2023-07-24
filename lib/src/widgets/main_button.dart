@@ -22,8 +22,12 @@ class MainButton extends StatelessWidget {
           ),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 16, bottom: 16, left: 0, right: 0),
-              child: Text(text, style: whiteBoldTextStyle,),
+              padding:
+                  const EdgeInsets.only(top: 16, bottom: 16, left: 0, right: 0),
+              child: Text(
+                text,
+                style: whiteBoldTextStyle,
+              ),
             ),
           ),
         ));

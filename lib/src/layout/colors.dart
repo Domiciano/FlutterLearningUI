@@ -20,7 +20,7 @@ const mainButtonGradient = LinearGradient(
   end: Alignment.centerRight,
 );
 
-
 const greyTextStyle = TextStyle(color: Color.fromARGB(255, 160, 160, 160));
 const whiteTextStyle = TextStyle(color: Color.fromARGB(255, 255, 255, 255));
-const whiteBoldTextStyle = TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold);
+const whiteBoldTextStyle = TextStyle(
+    color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold);

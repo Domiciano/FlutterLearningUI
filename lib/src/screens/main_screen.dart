@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
     const ChatScreen()
   ];
 
-  PageController pageController = PageController(initialPage: 0);
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +24,14 @@ class MainScreen extends StatelessWidget {
         builder: (context, snapshot) {
           return Scaffold(
             appBar: AppBar(
-              title: Image.asset('assets/cisco.png', height: 32),
+              title: Center( child: Image.asset('assets/cisco.png', height: 32)),
               automaticallyImplyLeading: false,
             ),
-            body: getScreenAt(snapshot.data!),
+            body: getScreenAt(snapshot.data ?? 0),
             bottomNavigationBar: BottomNavigationBar(
-              currentIndex: snapshot.data!, // Índice inicial (pantalla activa)
+              currentIndex: snapshot.data ?? 0, // Índice inicial (pantalla activa)
               onTap: (index) {
                 bloc.navigate(index);
-                pageController.jumpToPage(index);
               },
               items: const [
                 BottomNavigationBarItem(
@@ -52,7 +51,7 @@ class MainScreen extends StatelessWidget {
           );
         });
   }
-  
+
   Widget getScreenAt(int i) {
     return _screens[i];
   }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ui_learning/src/layout/colors.dart';
 
 class CircleButton extends StatelessWidget {
-  
   const CircleButton({super.key, required this.title, required this.asset});
 
   final String title;
@@ -11,12 +10,12 @@ class CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.0,
+        width: 100.0,
         margin: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   print("Click");
                 },
                 child: Image(
@@ -24,8 +23,8 @@ class CircleButton extends StatelessWidget {
                   width: 48.0,
                   height: 48.0,
                 )),
-                const SizedBox(height: 8),
-                Text(title, style: whiteTextStyle),
+            const SizedBox(height: 8),
+            Text(title, style: whiteTextStyle),
           ],
         ));
   }
