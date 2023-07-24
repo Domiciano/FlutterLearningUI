@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:ui_learning/src/blocs/contact_bloc.dart';
+import 'package:ui_learning/src/dialog/number_dialog.dart';
+
+import '../blocs/auth_bloc.dart';
+import '../items/contact_list_item.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
+  final ContactBloc _contactBloc = ContactBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -34,38 +40,50 @@ class ProfileScreen extends StatelessWidget {
             width: double.infinity,
             child: Stack(
               children: [
+                StreamBuilder(
+                    stream: _contactBloc.contactListStream,
+                    builder: (context, snap) {
+                      if (snap.data != null) {
+                        var data = snap.data!;
+                        if (data.isNotEmpty) {
+                          return ListView.builder(
+                              itemCount: data.length,
+                              prototypeItem:
+                                  const ContactListItem(name: "", number: ""),
+                              itemBuilder: (context, index) {
+                                return ContactListItem(
+                                  name: data[index].name,
+                                  number: data[index].number,
+                                );
+                              });
+                        } else {
+                          return Text("Hay no hay datos");
+                        }
+                      } else {
+                        return Text("Loading");
+                      }
+                    }),
                 Positioned(
-                    bottom: 8,
-                    right: 8,
+                    bottom: 16,
+                    right: 16,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text("Agregar"))),
-                ListView(
-                  children: [
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                    Text("Alfa"),
-                  ],
-                )
+                        onPressed: () {
+                          show(context);
+                        },
+                        child: Text("Agregar"))),
               ],
             ),
           ))
         ],
       ),
     );
+  }
+
+  void show(context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return NumberDialog(bloc: _contactBloc);
+        });
   }
 }

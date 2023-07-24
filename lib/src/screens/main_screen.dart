@@ -10,9 +10,9 @@ class MainScreen extends StatelessWidget {
   final NavigationBloc bloc = NavigationBloc();
 
   final List<Widget> _screens = [
-    const ProfileScreen(),
-    const WorldScreen(),
-    const ChatScreen()
+    ProfileScreen(),
+    WorldScreen(),
+    ChatScreen()
   ];
 
 
